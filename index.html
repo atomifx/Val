@@ -7,13 +7,13 @@
     <style>
         body {
             margin: 0;
-            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             position: relative; /* Required for the overlay */
             background-image: url('valentines-day-background-15162385503id.jpg');
             background-size: cover;
+            min-height: 100vh; /* Ensure the body covers the viewport */
         }
 
         body::before {
@@ -30,7 +30,6 @@
 
         .container {
             text-align: center;
-            gap: 50px;
         }
 
         #yesButton, #noButton {
@@ -67,10 +66,8 @@
 
         .a{
             display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            gap: 50px;
+            flex-direction: column; /* Align buttons vertically on small screens */
+            gap: 20px; /* Add spacing between buttons */
         }
 
         @keyframes fadeIn {
@@ -81,19 +78,32 @@
                 opacity: 1;
             }
         }
+
+        /* Media query for smaller screens */
+        @media only screen and (max-width: 600px) {
+            #yesButton, #noButton {
+                width: 100%; /* Make buttons full width */
+            }
+            h1 {
+                font-size: 20px; /* Adjust font size for smaller screens */
+            }
+            #hoorayGif {
+                font-size: 60px; /* Adjust font size for smaller screens */
+            }
+        }
     </style>
 </head>
 <body>
     <div class="b">
         <div class="container">
-            <img src="2d-cartoon-image-of-a-cute-white-bear-holding-a-rose-out-1.png" style="height: 400px; width: 700px; margin-left:100px;" alt="Teddy bear with rose">
-            <h1>Will you be my Valentine 🥺🥺?</h1>
+            <img src="2d-cartoon-image-of-a-cute-white-bear-holding-a-rose-out-1.png" style="max-width: 100%; height: auto;" alt="Teddy bear with rose"> <!-- Make the image responsive -->
+            <h1 style="font-size: 24px;">Will you be my Valentine 🥺🥺?</h1> <!-- Adjust font size for smaller screens -->
             <div class="a">
                 <button id="yesButton">Yes</button>
                 <button id="noButton">No</button>
             </div>
             <div id="hoorayGif">
-                <img src="estatic-white-teddy-bear-holding-roses-jumping-happy-2d-cartoon-animation-removebg-preview.png" alt="Hooray ">
+                <img src="estatic-white-teddy-bear-holding-roses-jumping-happy-2d-cartoon-animation-removebg-preview.png" alt="Hooray " style="max-width: 100%; height: auto;"> <!-- Make the image responsive -->
                 <p>Hooray 💍💐🥰!</p>
             </div>
         </div>
