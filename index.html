@@ -66,8 +66,9 @@
 
         .a{
             display: flex;
-            flex-direction: column; /* Align buttons vertically on small screens */
-            gap: 20px; /* Add spacing between buttons */
+            flex-direction: row; /* Align buttons vertically on small screens */
+            gap: 50px; /* Add spacing between buttons */
+            justify-content: center;
         }
 
         @keyframes fadeIn {
@@ -90,13 +91,18 @@
             #hoorayGif {
                 font-size: 60px; /* Adjust font size for smaller screens */
             }
+            .a{
+            display: flex;
+            flex-direction:column; /* Align buttons vertically on small screens */
+            gap: 20px; /* Add spacing between buttons */
+            justify-content: space-between;
         }
     </style>
 </head>
 <body>
     <div class="b">
         <div class="container">
-            <img src="2d-cartoon-image-of-a-cute-white-bear-holding-a-rose-out-1.png" style="max-width: 100%; height: auto;" alt="Teddy bear with rose"> <!-- Make the image responsive -->
+            <img src="2d-cartoon-image-of-a-cute-white-bear-holding-a-rose-out-1.png" style="max-width: 100%; height: auto;;" alt="Teddy bear with rose"> <!-- Make the image responsive -->
             <h1 style="font-size: 24px;">Will you be my Valentine 🥺🥺?</h1> <!-- Adjust font size for smaller screens -->
             <div class="a">
                 <button id="yesButton">Yes</button>
